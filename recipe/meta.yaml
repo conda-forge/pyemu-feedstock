@@ -23,12 +23,15 @@ requirements:
     - python >=3.8
     - numpy
     - pandas
+    - flopy
+    - matplotlib-base
 
 test:
   imports:
     - pyemu
   commands:
     - pip check
+    - python -Werror -c "import pyemu"
   requires:
     - pip
 

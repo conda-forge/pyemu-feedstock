@@ -1,5 +1,5 @@
 {% set name = "pyemu" %}
-{% set version = "1.4.0" %}
+{% set version = "1.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyemu-{{ version }}.tar.gz
-  sha256: 826ed7170cac5bf452f65ca127ae55831b42a9e0771a9954f46410862558d29c
+  sha256: 70d202ed0f3d2851fc5b75447458ea331efd5194c9fbd03b6baa15c4bdb03ce7
 
 build:
   noarch: python

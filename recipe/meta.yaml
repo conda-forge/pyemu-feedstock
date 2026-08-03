@@ -11,27 +11,27 @@ source:
 
 build:
   noarch: python
+  entry_points:
+    - get-pestpp = pyemu.utils.get_pestpp:cli_main
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
     - python {{ python_min }}
-    - setuptools >=61
+    - uv-build
     - pip
   run:
     - python >={{ python_min }}
     - numpy
     - pandas
-    - flopy
-    - matplotlib-base
 
 test:
   imports:
     - pyemu
   commands:
     - pip check
-    - python -Werror -c "import pyemu"
+    - get-pestpp --help
   requires:
     - pip
     - python {{ python_min }}
